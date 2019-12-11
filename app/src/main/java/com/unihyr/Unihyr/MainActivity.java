@@ -14,10 +14,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
-    private NavController navController;
-    private NavigationView navigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +22,17 @@ public class MainActivity extends AppCompatActivity {
         MaterialToolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawerLayout=findViewById(R.id.drawer_layout);
-        navigationView=findViewById(R.id.nav_view);
-        navController= Navigation.findNavController(this,R.id.nav_host_fragment);
+        getSupportActionBar().setTitle("Positions");
 
-        AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(navController.getGraph())
-                        .setDrawerLayout(drawerLayout)
-                        .build();
+        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
-        NavigationUI.setupWithNavController(toolbar,navController,appBarConfiguration);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(new int[]{R.id.positions,R.id.calendar,R.id.offer,R.id.drives,R.id.users})
+                .setDrawerLayout(drawerLayout)
+                .build();
+
+        NavigationUI.setupWithNavController(toolbar, navController,appBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 }
