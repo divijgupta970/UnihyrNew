@@ -11,11 +11,14 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.unihyr.Unihyr.R;
 import com.unihyr.Unihyr.positions.adapters.PositionsAdapter;
 import com.unihyr.Unihyr.positions.model.Position;
@@ -34,7 +37,7 @@ public class PositionsFragment extends Fragment {
     private ProgressBar progressBar;
     private PositionsFragmentViewmodel viewmodel;
     private PositionsAdapter adapter;
-
+    private TextView tvError;
     public PositionsFragment() {
         // Required empty public constructor
     }
@@ -54,12 +57,28 @@ public class PositionsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        
+
+        tvError=view.findViewById(R.id.tvError);
+
         progressBar=view.findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
 
+        final FloatingActionButton fab=view.findViewById(R.id.fab);
+
         recyclerView=view.findViewById(R.id.rvPositions);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                if(dy>0){
+                    fab.hide();
+                    return;
+                }
+                if(dy<0){
+                    fab.show();
+                }
+            }
+        });
         
         getPositions();
     }
@@ -69,12 +88,22 @@ public class PositionsFragment extends Fragment {
             @Override
             public void onChanged(List<Position> positions) {
                 positionList=positions;
-                setUpRecyclerView();
+                if (!positions.isEmpty()) {
+                    setUpRecyclerView();
+                }
+                else
+                    errorFunction();
             }
         });
     }
 
+    private void errorFunction() {
+        progressBar.setVisibility(View.GONE);
+        tvError.setVisibility(View.VISIBLE);
+    }
+
     private void setUpRecyclerView() {
+        tvError.setVisibility(View.GONE);
         adapter=new PositionsAdapter(getActivity(),positionList);
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);

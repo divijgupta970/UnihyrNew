@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.unihyr.Unihyr.positions.model.Position;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -26,16 +27,14 @@ public class Repository {
         call.enqueue(new Callback<List<Position>>() {
             @Override
             public void onResponse(Call<List<Position>> call, Response<List<Position>> response) {
-                    Log.d("Repository","Got Response");
-                    positionsLiveData.setValue(response.body());
+                positionsLiveData.setValue(response.body());
             }
 
             @Override
             public void onFailure(Call<List<Position>> call, Throwable t) {
-                Log.d("Repository",t.getLocalizedMessage());
+                positionsLiveData.setValue(new ArrayList<Position>());
             }
         });
-
         return positionsLiveData;
     }
 }
