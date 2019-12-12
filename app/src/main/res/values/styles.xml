@@ -10,11 +10,12 @@
 
     <style name="CardLabel">
         <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="CardInfo">
-        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
         <item name="android:alpha">0.75</item>
     </style>
 

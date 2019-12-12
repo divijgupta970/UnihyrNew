@@ -2,6 +2,14 @@ package com.unihyr.Unihyr.positions;
 
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,14 +19,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.unihyr.Unihyr.R;
 import com.unihyr.Unihyr.positions.adapters.PositionsAdapter;
 import com.unihyr.Unihyr.positions.model.Position;
@@ -36,8 +39,9 @@ public class PositionsFragment extends Fragment {
     private List<Position> positionList=new ArrayList<>();
     private ProgressBar progressBar;
     private PositionsFragmentViewmodel viewmodel;
-    private PositionsAdapter adapter;
     private TextView tvError;
+    private MaterialSearchView searchView;
+    private PositionsAdapter adapter;
     public PositionsFragment() {
         // Required empty public constructor
     }
@@ -79,7 +83,19 @@ public class PositionsFragment extends Fragment {
                 }
             }
         });
-        
+
+        searchView=view.findViewById(R.id.search_view_positions);
+        MaterialToolbar toolbar = view.findViewById(R.id.search_toolbar_positions);
+        toolbar.inflateMenu(R.menu.menu_positions);
+        MenuItem item= toolbar.getMenu().findItem(R.id.action_search);
+        searchView.setMenuItem(item);
+        MenuItem item2 = toolbar.getMenu().findItem(R.id.spinner);
+        Spinner spinner = (Spinner) item2.getActionView();
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
+                R.array.positions_spinner_array, android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+
         getPositions();
     }
 
@@ -104,7 +120,19 @@ public class PositionsFragment extends Fragment {
 
     private void setUpRecyclerView() {
         tvError.setVisibility(View.GONE);
-        adapter=new PositionsAdapter(getActivity(),positionList);
+        adapter = new PositionsAdapter(getActivity(), positionList);
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);
     }
