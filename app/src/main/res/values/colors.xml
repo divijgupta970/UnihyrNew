@@ -5,4 +5,5 @@
     <color name="colorAccent">#F8BA11</color>
     <color name="tabIndicatorColor">#f06292</color>
     <color name="colorPrimaryLight">#ffff54</color>
+    <color name="iconColor">#000000</color>
 </resources>
