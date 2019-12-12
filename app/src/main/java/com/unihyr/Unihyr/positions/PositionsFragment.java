@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import com.unihyr.Unihyr.R;
@@ -42,6 +43,7 @@ public class PositionsFragment extends Fragment {
     private TextView tvError;
     private MaterialSearchView searchView;
     private PositionsAdapter adapter;
+    private MaterialButton btnRetry;
     public PositionsFragment() {
         // Required empty public constructor
     }
@@ -63,9 +65,15 @@ public class PositionsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         tvError=view.findViewById(R.id.tvError);
+        btnRetry=view.findViewById(R.id.btnRetry);
+        btnRetry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getPositions();
+            }
+        });
 
         progressBar=view.findViewById(R.id.progressbar);
-        progressBar.setVisibility(View.VISIBLE);
 
         final FloatingActionButton fab=view.findViewById(R.id.fab);
 
@@ -100,6 +108,8 @@ public class PositionsFragment extends Fragment {
     }
 
     private void getPositions() {
+        progressBar.setVisibility(View.VISIBLE);
+
         viewmodel.getPositionList().observe(this, new Observer<List<Position>>() {
             @Override
             public void onChanged(List<Position> positions) {
@@ -116,10 +126,12 @@ public class PositionsFragment extends Fragment {
     private void errorFunction() {
         progressBar.setVisibility(View.GONE);
         tvError.setVisibility(View.VISIBLE);
+        btnRetry.setVisibility(View.VISIBLE);
     }
 
     private void setUpRecyclerView() {
         tvError.setVisibility(View.GONE);
+        btnRetry.setVisibility(View.GONE);
         adapter = new PositionsAdapter(getActivity(), positionList);
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
