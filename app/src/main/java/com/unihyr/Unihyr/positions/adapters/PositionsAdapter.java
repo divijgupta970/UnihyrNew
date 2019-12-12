@@ -20,12 +20,12 @@ import java.util.List;
 public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.PositionsViewholder> implements Filterable {
     private Context mCtx;
     private List<Position> positionList;
-    private List<Position> positionListFiltered;
+    private List<Position> positionListSearched;
 
     public PositionsAdapter(Context mCtx, List<Position> positionList) {
         this.mCtx = mCtx;
         this.positionList = positionList;
-        this.positionListFiltered= positionList;
+        this.positionListSearched= positionList;
     }
 
     @NonNull
@@ -37,7 +37,7 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
 
     @Override
     public void onBindViewHolder(@NonNull PositionsViewholder holder, int position) {
-        Position currentPosition=positionListFiltered.get(position);
+        Position currentPosition=positionListSearched.get(position);
         holder.tvPosition.setText(currentPosition.getTitle());
         holder.tvLocation.setText(currentPosition.getLocation());
         holder.tvInitiator.setText("null");
@@ -45,7 +45,7 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
 
     @Override
     public int getItemCount() {
-        return positionListFiltered.size();
+        return positionListSearched.size();
     }
 
     public class PositionsViewholder extends RecyclerView.ViewHolder{
@@ -66,7 +66,7 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
                 String key =constraint.toString();
                 if (key.isEmpty())
                 {
-                    positionListFiltered=positionList;
+                    positionListSearched=positionList;
                 }
                 else
                 {
@@ -77,17 +77,17 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
                             lstFiltered.add(row);
                         }
                     }
-                    positionListFiltered= lstFiltered;
+                    positionListSearched= lstFiltered;
                 }
 
                 FilterResults filterResults = new FilterResults();
-                filterResults.values= positionListFiltered;
+                filterResults.values= positionListSearched;
                 return filterResults;
             }
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                positionListFiltered = (ArrayList<Position>) results.values;
+                positionListSearched = (ArrayList<Position>) results.values;
                 notifyDataSetChanged();
             }
         };
