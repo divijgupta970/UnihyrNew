@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -44,6 +45,9 @@ public class PositionsFragment extends Fragment {
     private MaterialSearchView searchView;
     private PositionsAdapter adapter;
     private MaterialButton btnRetry;
+    private Spinner spinner;
+    private MaterialToolbar toolbar;
+
     public PositionsFragment() {
         // Required empty public constructor
     }
@@ -93,18 +97,33 @@ public class PositionsFragment extends Fragment {
         });
 
         searchView=view.findViewById(R.id.search_view_positions);
-        MaterialToolbar toolbar = view.findViewById(R.id.search_toolbar_positions);
+        toolbar = view.findViewById(R.id.search_toolbar_positions);
+        handleSearchView();
+
+        getPositions();
+    }
+
+    private void handleSearchView() {
         toolbar.inflateMenu(R.menu.menu_positions);
         MenuItem item= toolbar.getMenu().findItem(R.id.action_search);
         searchView.setMenuItem(item);
         MenuItem item2 = toolbar.getMenu().findItem(R.id.spinner);
-        Spinner spinner = (Spinner) item2.getActionView();
+        spinner = (Spinner) item2.getActionView();
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
                 R.array.positions_spinner_array, android.R.layout.simple_spinner_item);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        getPositions();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     private void getPositions() {
