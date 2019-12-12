@@ -1,18 +1,21 @@
 package com.unihyr.Unihyr.positions.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.unihyr.Unihyr.R;
 import com.unihyr.Unihyr.positions.model.Position;
+import com.unihyr.Unihyr.positions.viewposition.ViewPositionActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +59,20 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
             tvPosition=itemView.findViewById(R.id.tvPosition);
             tvLocation=itemView.findViewById(R.id.tvLocation);
             tvInitiator=itemView.findViewById(R.id.tvInitiator);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(mCtx, ViewPositionActivity.class);
+                    intent.putExtra("position",positionListSearched.get(getAdapterPosition()));
+                    mCtx.startActivity(intent);
+                }
+            });
+            itemView.findViewById(R.id.ivInfo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(mCtx, "Info clicked", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
     @Override
