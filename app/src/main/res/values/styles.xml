@@ -19,4 +19,13 @@
         <item name="android:alpha">0.75</item>
     </style>
 
+    <style name="ToDoHeaders">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle2</item>
+    </style>
+
+    <style name="TeamHeaders">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+    </style>
+
 </resources>

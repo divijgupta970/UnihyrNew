@@ -12,4 +12,16 @@
         <item>Pending Validation</item>
         <item>Closed</item>
     </string-array>
+    <string-array name="profiles_spinner_array">
+        <item>Active Profiles</item>
+        <item>In-House team</item>
+        <item>External Consultant</item>
+        <item>Recommended</item>
+    </string-array>
+    <string-array name="todo_spinner_array">
+        <item>Pending for reviews</item>
+        <item>To Be Scheduled For Interview</item>
+        <item>Pending Offers</item>
+        <item>Pending Feedbacks</item>
+    </string-array>
 </resources>

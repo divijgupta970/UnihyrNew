@@ -24,65 +24,68 @@
             android:src="@drawable/ic_info"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <TextView
-            android:id="@+id/tvLabelPosition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Position"
-            style="@style/CardLabel" />
 
         <TextView
-            android:id="@+id/tvLabelLocation"
+            android:id="@+id/tvLabelName"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvLabellSubmit"
             style="@style/CardLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Location"
+            android:text="Submitted By"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLabelPosition" />
+            app:layout_constraintTop_toBottomOf="@id/tvLabelName" />
 
         <TextView
-            android:id="@+id/tvLabelInitiator"
+            android:id="@+id/tvLabelPhone"
             style="@style/CardLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Initiator"
+            android:text="Phone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLabelLocation" />
+            app:layout_constraintTop_toBottomOf="@id/tvLabellSubmit" />
+
         <TextView
-            android:id="@+id/tvPosition"
+            android:id="@+id/tvName"
+            style="@style/CardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp"
-            tools:text="Account Manager"
-            app:layout_constraintStart_toEndOf="@id/tvLabelLocation"
-            style="@style/CardInfo" />
+            android:text="Arjun Pathania"
+            app:layout_constraintStart_toEndOf="@id/tvLabellSubmit"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvLocation"
+            android:id="@+id/tvSubmit"
             style="@style/CardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@id/tvLabelLocation"
-            app:layout_constraintTop_toBottomOf="@id/tvPosition"
-            tools:text="Hydrabad" />
+            android:text="Anamika"
+            app:layout_constraintStart_toEndOf="@id/tvLabellSubmit"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
 
         <TextView
-            android:id="@+id/tvInitiator"
+            android:id="@+id/tvPhone"
             style="@style/CardInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@id/tvLabelLocation"
-            app:layout_constraintTop_toBottomOf="@id/tvLocation"
-            tools:text="null" />
+            android:text="9493342412"
+            app:layout_constraintStart_toEndOf="@id/tvLabellSubmit"
+            app:layout_constraintTop_toBottomOf="@id/tvSubmit" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <View
         android:layout_width="match_parent"

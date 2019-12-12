@@ -34,7 +34,7 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
     @NonNull
     @Override
     public PositionsViewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(mCtx).inflate(R.layout.card_position,parent,false);
+        View v= LayoutInflater.from(mCtx).inflate(R.layout.item_position,parent,false);
         return new PositionsViewholder(v);
     }
 
@@ -43,6 +43,7 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
         Position currentPosition=positionListSearched.get(position);
         holder.tvPosition.setText(currentPosition.getTitle());
         holder.tvLocation.setText(currentPosition.getLocation());
+        holder.tvPostId.setText(currentPosition.getJobCode());
         holder.tvInitiator.setText("null");
     }
 
@@ -52,13 +53,14 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
     }
 
     public class PositionsViewholder extends RecyclerView.ViewHolder{
-        private TextView tvPosition,tvLocation,tvInitiator;
+        private TextView tvPosition,tvLocation,tvInitiator,tvPostId;
 
         public PositionsViewholder(@NonNull View itemView) {
             super(itemView);
-            tvPosition=itemView.findViewById(R.id.tvPosition);
-            tvLocation=itemView.findViewById(R.id.tvLocation);
-            tvInitiator=itemView.findViewById(R.id.tvInitiator);
+            tvPosition=itemView.findViewById(R.id.tvName);
+            tvLocation=itemView.findViewById(R.id.tvSubmit);
+            tvInitiator=itemView.findViewById(R.id.tvPhone);
+            tvPostId=itemView.findViewById(R.id.tvPostId);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

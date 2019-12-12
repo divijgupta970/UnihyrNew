@@ -14,7 +14,7 @@
         android:id="@+id/action_moreinfo"
         android:orderInCategory="200"
         android:title="More Info"
-        android:icon="@drawable/ic_info"
+        android:icon="@drawable/ic_info_white"
         app:showAsAction="ifRoom"/>
 
 </menu>
