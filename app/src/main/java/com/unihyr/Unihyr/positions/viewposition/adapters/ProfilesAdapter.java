@@ -26,9 +26,7 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.Profil
 
     @Override
     public void onBindViewHolder(@NonNull ProfilesViewholder holder, int position) {
-
     }
-
     @Override
     public int getItemCount() {
         return 10;

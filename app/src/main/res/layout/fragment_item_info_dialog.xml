@@ -11,7 +11,7 @@
         style="@style/DialogHeaders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hiring SPOC"
+        android:text="Channel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,7 +20,6 @@
         style="@style/CardInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anant Garg"
         app:layout_constraintBaseline_toBaselineOf="@id/tvLabelChannel"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -39,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Total Profiles"
+        android:text="Status"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider1" />
 
@@ -48,7 +47,6 @@
         style="@style/CardInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10"
         app:layout_constraintBaseline_toBaselineOf="@id/tvLabelStatus"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -66,57 +64,66 @@
         style="@style/DialogHeaders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Actions"
-        app:layout_constraintBottom_toBottomOf="@id/guide"
+        android:layout_marginTop="8dp"
+        android:text="Current Role"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guide" />
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+    <TextView
+        android:id="@+id/tvCurrentRole"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelCurrentRole"
+        app:layout_constraintEnd_toEndOf="parent" />
     <View
-        android:id="@+id/guide"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider2"/>
-    <ImageView
-        android:id="@+id/ivDeactivate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:src="@drawable/ic_slash"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider2" />
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelCurrentRole" />
 
-    <ImageView
-        android:id="@+id/ivEdit"
+    <TextView
+        android:id="@+id/tvLabelCurrentOrg"
+        style="@style/DialogHeaders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:alpha="0.5"
-        android:src="@drawable/ic_edit"
-        android:tint="#000000"
-        app:layout_constraintEnd_toStartOf="@id/ivDeactivate"
-        app:layout_constraintTop_toBottomOf="@id/divider2" />
-    <ImageView
-        android:id="@+id/ivActivate"
+        android:text="Current Org."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+    <TextView
+        android:id="@+id/tvCurrOrg"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelCurrentOrg"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelCurrentOrg" />
+
+    <TextView
+        android:id="@+id/tvLabelExp"
+        style="@style/DialogHeaders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:visibility="gone"
-        android:src="@drawable/ic_key"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider2" />
-    <ImageView
-        android:id="@+id/ivApprove"
+        android:text="Exp.(Yr.)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+    <TextView
+        android:id="@+id/tvExp"
+        style="@style/CardInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:alpha="0.5"
-        android:visibility="gone"
-        android:src="@drawable/ic_check"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider2" />
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelExp"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -16,12 +17,14 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.unihyr.Unihyr.R;
+import com.unihyr.Unihyr.positions.PositionDialogFragment;
 import com.unihyr.Unihyr.positions.model.Position;
 
 public class ViewPositionActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
+    private Position position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +65,7 @@ public class ViewPositionActivity extends AppCompatActivity {
         }).attach();
 
         Intent intent = getIntent();
-        Position position = intent.getParcelableExtra("position");
+        position = intent.getParcelableExtra("position");
         if (position != null) {
             getSupportActionBar().setTitle(position.getTitle());
         }
@@ -77,7 +80,7 @@ public class ViewPositionActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_moreinfo) {
-            //TODO: Add more info code here
+            showInfoDialog();
         } else if (item.getItemId() == R.id.action_edit) {
             //TODO: Add edit code here
         }
@@ -117,5 +120,14 @@ public class ViewPositionActivity extends AppCompatActivity {
         public int getItemCount() {
             return 4;
         }
+    }
+    private void showInfoDialog() {
+        FragmentTransaction ft= getSupportFragmentManager().beginTransaction();
+        Fragment prev= getSupportFragmentManager().findFragmentByTag("dialog");
+        if(prev!=null)
+            ft.remove(prev);
+        ft.addToBackStack(null);
+        PositionInfoDialogFragment newFragment= new PositionInfoDialogFragment(position);
+        newFragment.show(ft,"dialog");
     }
 }
