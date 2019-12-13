@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -151,7 +153,13 @@ public class PositionsFragment extends Fragment {
     private void setUpRecyclerView() {
         tvError.setVisibility(View.GONE);
         btnRetry.setVisibility(View.GONE);
-        adapter = new PositionsAdapter(getActivity(), positionList);
+        adapter = new PositionsAdapter(getActivity(), positionList, new PositionsAdapter.InfoClickHandler() {
+            @Override
+            public void onInfoClicked(Position position) {
+                showInfoDialog(position);
+            }
+        });
+
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -166,5 +174,15 @@ public class PositionsFragment extends Fragment {
         });
         recyclerView.setAdapter(adapter);
         progressBar.setVisibility(View.GONE);
+    }
+
+    private void showInfoDialog(Position position) {
+        FragmentTransaction ft= getActivity().getSupportFragmentManager().beginTransaction();
+        Fragment prev= getActivity().getSupportFragmentManager().findFragmentByTag("dialog");
+        if(prev!=null)
+            ft.remove(prev);
+        ft.addToBackStack(null);
+        PositionDialogFragment newFragment= new PositionDialogFragment(position);
+        newFragment.show(ft,"dialog");
     }
 }

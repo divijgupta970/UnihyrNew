@@ -28,4 +28,9 @@
         </item>
     </style>
 
+    <style name="DialogHeaders">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+    </style>
+
 </resources>

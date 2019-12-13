@@ -23,7 +23,8 @@
             android:id="@+id/tabLayoutViewPositions"
             android:layout_width="match_parent"
             android:elevation="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:tabGravity="fill">
         </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

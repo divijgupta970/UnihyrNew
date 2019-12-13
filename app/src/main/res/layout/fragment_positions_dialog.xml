@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvLabelHiring"
+        style="@style/DialogHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hiring SPOC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHiring"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anant Garg"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelHiring"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelHiring" />
+
+    <TextView
+        android:id="@+id/tvLabelTotalProfiles"
+        style="@style/DialogHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Total Profiles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <TextView
+        android:id="@+id/tvTotalProfiles"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelTotalProfiles"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelTotalProfiles" />
+
+    <TextView
+        android:id="@+id/tvLabelActions"
+        style="@style/DialogHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actions"
+        app:layout_constraintBottom_toBottomOf="@id/guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide" />
+    <View
+        android:id="@+id/guide"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2"/>
+    <ImageView
+        android:id="@+id/ivDeactivate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:src="@drawable/ic_slash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <ImageView
+        android:id="@+id/ivEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:alpha="0.5"
+        android:src="@drawable/ic_edit"
+        android:tint="#000000"
+        app:layout_constraintEnd_toStartOf="@id/ivDeactivate"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+    <ImageView
+        android:id="@+id/ivActivate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:src="@drawable/ic_key"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+    <ImageView
+        android:id="@+id/ivApprove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,21 +37,27 @@ public class ViewPositionActivity extends AppCompatActivity {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 String text="";
+                int icon=0;
                 switch (position){
                     case 0:
                         text="Profiles";
+                        icon=R.drawable.ic_user;
                         break;
                     case 1:
                         text="To do's";
+                        icon=R.drawable.ic_list;
                         break;
                     case 2:
                         text="Team";
+                        icon=R.drawable.ic_users;
                         break;
                     case 3:
                         text="Drives";
+                        icon=R.drawable.ic_database;
                         break;
                 }
                 tab.setText(text);
+                tab.setIcon(icon);
             }
         }).attach();
 

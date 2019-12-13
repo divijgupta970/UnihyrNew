@@ -24,11 +24,13 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
     private Context mCtx;
     private List<Position> positionList;
     private List<Position> positionListSearched;
+    private InfoClickHandler clickHandler;
 
-    public PositionsAdapter(Context mCtx, List<Position> positionList) {
+    public PositionsAdapter(Context mCtx, List<Position> positionList,InfoClickHandler clickHandler) {
         this.mCtx = mCtx;
         this.positionList = positionList;
         this.positionListSearched= positionList;
+        this.clickHandler=clickHandler;
     }
 
     @NonNull
@@ -72,11 +74,16 @@ public class PositionsAdapter extends RecyclerView.Adapter<PositionsAdapter.Posi
             itemView.findViewById(R.id.ivInfo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(mCtx, "Info clicked", Toast.LENGTH_SHORT).show();
+                    clickHandler.onInfoClicked(positionList.get(getAdapterPosition()));
                 }
             });
         }
     }
+
+    public interface InfoClickHandler{
+         void onInfoClicked(Position position);
+    }
+
     @Override
     public Filter getFilter() {
         return new Filter() {
