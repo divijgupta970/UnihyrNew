@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F8BA11</color>
-    <color name="colorPrimaryDark">#C08A00</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#F8BA11</color>
     <color name="tabIndicatorColor">#f06292</color>
     <color name="colorPrimaryLight">#ffff54</color>
-    <color name="iconColor">#000000</color>
-    <color name="backgroundColor">#ffffff</color>
+    <color name="iconColor">#ffffff</color>
+    <color name="backgroundColor">#121212</color>
 </resources>
