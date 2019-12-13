@@ -29,4 +29,12 @@
         <item>Upcoming</item>
         <item>Past</item>
     </string-array>
+    <string-array name="users_roles">
+        <item>All</item>
+        <item>ROLE_ADMIN</item>
+        <item>ROLE_BUHEAD</item>
+        <item>ROLE_BUSINESS</item>
+        <item>ROLE_RECRUITER</item>
+        <item>ROLE_SPOC</item>
+    </string-array>
 </resources>

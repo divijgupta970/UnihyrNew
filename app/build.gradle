@@ -42,4 +42,6 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0" //ViewPager2
 
     implementation 'com.miguelcatalan:materialsearchview:1.4.0' //SearchView
+
+    implementation 'com.github.ivbaranov:materiallettericon:0.2.3' //LetterIcons
 }
