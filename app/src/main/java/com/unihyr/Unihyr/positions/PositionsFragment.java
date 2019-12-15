@@ -134,7 +134,7 @@ public class PositionsFragment extends Fragment {
             @Override
             public void onChanged(List<Position> positions) {
                 positionList=positions;
-                if (!positions.isEmpty()) {
+                if (positions!=null&&!positions.isEmpty()) {
                     setUpRecyclerView();
                 }
                 else
