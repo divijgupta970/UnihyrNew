@@ -5,7 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static String BASE_URL="https://demorms.unihyr.com";
+    private static String BASE_URL_TEMP="https://testing.unihyr.com";
     private static Retrofit retrofit=null;
+    private static Retrofit retrofitTemp=null;
     public static DataService getService(){
         if (retrofit==null){
             retrofit=new Retrofit
@@ -15,5 +17,15 @@ public class RetrofitInstance {
                     .build();
         }
         return retrofit.create(DataService.class);
+    }
+    public static DataServiceTemp getTempService(){
+        if (retrofitTemp==null){
+            retrofitTemp=new Retrofit
+                    .Builder()
+                    .baseUrl(BASE_URL_TEMP)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofitTemp.create(DataServiceTemp.class);
     }
 }

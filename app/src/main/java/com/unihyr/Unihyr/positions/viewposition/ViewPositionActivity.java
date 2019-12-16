@@ -1,23 +1,24 @@
 package com.unihyr.Unihyr.positions.viewposition;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.unihyr.Unihyr.R;
-import com.unihyr.Unihyr.positions.PositionDialogFragment;
 import com.unihyr.Unihyr.positions.model.Position;
 
 public class ViewPositionActivity extends AppCompatActivity {
@@ -25,10 +26,13 @@ public class ViewPositionActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
     private Position position;
+    private ViewPositionsViewmodel viewmodel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_position);
+
+        viewmodel= ViewModelProviders.of(this).get(ViewPositionsViewmodel.class);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,6 +73,8 @@ public class ViewPositionActivity extends AppCompatActivity {
         if (position != null) {
             getSupportActionBar().setTitle(position.getTitle());
         }
+        viewmodel.setPosition(position);
+
     }
 
     @Override
