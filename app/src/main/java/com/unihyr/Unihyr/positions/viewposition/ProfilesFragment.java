@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.unihyr.Unihyr.R;
@@ -37,6 +38,7 @@ public class ProfilesFragment extends Fragment {
     private ViewPositionsViewmodel viewmodel;
     private List<ViewPosition> viewPositionList;
     private Position position;
+    private ProgressBar progressBar;
 
     public ProfilesFragment() {
         // Required empty public constructor
@@ -62,6 +64,8 @@ public class ProfilesFragment extends Fragment {
         spinner=view.findViewById(R.id.spinner);
         recyclerView=view.findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        progressBar=view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
 
 
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
@@ -88,10 +92,12 @@ public class ProfilesFragment extends Fragment {
 
     private void errorFunction() {
         Log.d("PositionsFragment","Error occured");
+        progressBar.setVisibility(View.GONE);
     }
 
     private void setUpRecyclerView() {
         adapter=new ProfilesAdapter(getActivity(),viewPositionList);
         recyclerView.setAdapter(adapter);
+        progressBar.setVisibility(View.GONE);
     }
 }
