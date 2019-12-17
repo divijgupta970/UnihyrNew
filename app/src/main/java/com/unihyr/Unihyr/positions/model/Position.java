@@ -281,7 +281,7 @@ public class Position implements Parcelable
     }
             ;
 
-    protected Position(Parcel in) {
+        protected Position(Parcel in) {
         this.postId = ((Long) in.readValue((Long.class.getClassLoader())));
         this.jobCode = ((String) in.readValue((String.class.getClassLoader())));
         this.title = ((String) in.readValue((String.class.getClassLoader())));
