@@ -32,6 +32,11 @@ public class ProfileStatusActivity extends AppCompatActivity {
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
         tabLayout=findViewById(R.id.tabLayout);
         viewPager=findViewById(R.id.viewPager);
         viewPager.setAdapter(new ProfileStatusActivity.ViewPagerAdapter(this));
@@ -63,6 +68,26 @@ public class ProfileStatusActivity extends AppCompatActivity {
             }
         }).attach();
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.action_edit:
+                //TODO: add edit code here
+                break;
+            case R.id.action_cv:
+                cvFunction();
+                break;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_profile_status, menu);
@@ -102,5 +127,9 @@ public class ProfileStatusActivity extends AppCompatActivity {
         public int getItemCount() {
             return 4;
         }
+    }
+
+    private void cvFunction() {
+        //TODO: add CV code here
     }
 }
