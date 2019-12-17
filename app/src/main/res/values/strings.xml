@@ -37,4 +37,12 @@
         <item>ROLE_RECRUITER</item>
         <item>ROLE_SPOC</item>
     </string-array>
+    <string-array name="profile_status">
+        <item>Internal Pending</item>
+        <item>Screened</item>
+        <item>In process</item>
+        <item>To be offered</item>
+        <item>Offer accepted</item>
+        <item>Joined</item>
+    </string-array>
 </resources>
