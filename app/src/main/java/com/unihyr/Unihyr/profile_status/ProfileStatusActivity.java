@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,14 +21,18 @@ import com.unihyr.Unihyr.positions.viewposition.ProfilesFragment;
 import com.unihyr.Unihyr.positions.viewposition.TeamFragment;
 import com.unihyr.Unihyr.positions.viewposition.ToDoFragment;
 import com.unihyr.Unihyr.positions.viewposition.ViewPositionActivity;
+import com.unihyr.Unihyr.positions.viewposition.model.ViewPosition;
 
 public class ProfileStatusActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager2 viewPager;
+    private ViewPosition position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_status);
+
+        position=getIntent().getParcelableExtra("position");
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
