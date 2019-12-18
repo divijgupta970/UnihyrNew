@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+    android:clickable="true"
+    android:focusable="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/drInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:src="@drawable/ic_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/drLabelDrive"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drive"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/drLabelLocation"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drLabelDrive" />
+
+        <TextView
+            android:id="@+id/drLabelPostion"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Postion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drLabelLocation" />
+
+        <TextView
+            android:id="@+id/drLabelContactPerson"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ContactPerson"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drLabelPostion"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/drDrive"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Test Parkwheels"
+            app:layout_constraintStart_toEndOf="@id/drLabelContactPerson"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/drLocation"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Delhi"
+            app:layout_constraintStart_toEndOf="@id/drLabelContactPerson"
+            app:layout_constraintTop_toBottomOf="@id/drDrive" />
+
+        <TextView
+            android:id="@+id/drPostion"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Devloper"
+            app:layout_constraintStart_toEndOf="@id/drLabelContactPerson"
+            app:layout_constraintTop_toBottomOf="@id/drLocation" />
+        <TextView
+            android:id="@+id/drcontactperson"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Mr pardeep"
+            app:layout_constraintStart_toEndOf="@id/drLabelContactPerson"
+            app:layout_constraintTop_toBottomOf="@id/drPostion" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/iconColor"
+        android:alpha="0.25"/>
+</LinearLayout>

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Unihyr</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -12,6 +12,7 @@
         <item>Pending Validation</item>
         <item>Closed</item>
     </string-array>
+
     <string-array name="profiles_spinner_array">
         <item>Active Profiles</item>
         <item>In-House team</item>
