@@ -1,9 +1,9 @@
-package com.unihyr.Unihyr.drives_management;
+package com.unihyr.Unihyr.drives_management.model;
 
-public class drives {
+public class Drive {
     private String drdrive,drlocation,drpostion,drcontactperson,date_time;
     private int Candiadate,shortlisted,rejected,no_show;
-    public drives(String drdrive, String drlocation, String drpostion, String drcontactperson, String date_time, int candiadate, int shortlisted, int rejected, int no_show) {
+    public Drive(String drdrive, String drlocation, String drpostion, String drcontactperson, String date_time, int candiadate, int shortlisted, int rejected, int no_show) {
         this.drdrive = drdrive;
         this.drlocation = drlocation;
         this.drpostion = drpostion;

@@ -19,7 +19,6 @@ import com.unihyr.Unihyr.R;
  * A simple {@link Fragment} subclass.
  */
 public class DrivesFragment  extends Fragment {
-   // Todo complete driver fragment and spinner array
 
     public DrivesFragment() {
         // Required empty public constructor
