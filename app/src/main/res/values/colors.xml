@@ -7,4 +7,5 @@
     <color name="colorPrimaryLight">#ffff54</color>
     <color name="iconColor">#000000</color>
     <color name="backgroundColor">#ffffff</color>
+    <color name="greenColor">#3ACC6C</color>
 </resources>

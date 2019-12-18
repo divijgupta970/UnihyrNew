@@ -1,6 +1,7 @@
 package com.unihyr.Unihyr.positions.viewposition.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.unihyr.Unihyr.R;
 import com.unihyr.Unihyr.positions.viewposition.model.ViewPosition;
+import com.unihyr.Unihyr.profile_status.ProfileStatusActivity;
 
 import java.util.List;
 
@@ -50,6 +52,12 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.Profil
             tvName=itemView.findViewById(R.id.tvName);
             tvSubmit=itemView.findViewById(R.id.tvSubmit);
             tvContact=itemView.findViewById(R.id.tvPhone);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mCtx.startActivity(new Intent(mCtx, ProfileStatusActivity.class));
+                }
+            });
         }
     }
 }

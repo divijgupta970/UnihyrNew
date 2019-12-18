@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile_status.ProfileStatusFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Profile Status:"
+        style="@style/TeamHeaders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.shuhart.stepview.StepView
+        android:id="@+id/step_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:sv_animationType="None"
+        app:sv_doneCircleColor="@color/greenColor"
+        app:sv_doneCircleRadius="12dp"
+        app:sv_doneTextColor="@color/iconColor"
+        app:sv_doneStepLineColor="@color/greenColor"
+        app:sv_doneStepMarkColor="#ffffff"
+        app:sv_nextStepLineColor="@color/iconColor"
+        app:sv_nextTextColor="@color/iconColor"
+        app:sv_selectedCircleColor="@color/greenColor"
+        app:sv_selectedCircleRadius="12dp"
+        app:sv_selectedStepNumberColor="#ffffff"
+        app:sv_selectedTextColor="@color/greenColor"
+        app:sv_stepLineWidth="1dp"
+        app:sv_stepPadding="8dp"
+        app:sv_stepViewStyle="@style/StepView"
+        app:sv_steps="@array/profile_status" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/step_view" />
+
+    <TextView
+        android:id="@+id/tvLabelSource"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Source:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <TextView
+        android:id="@+id/tvSource"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="In-house team"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelSource"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSource" />
+
+    <TextView
+        android:id="@+id/tvLabelSubmitted"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Submitted:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+    <TextView
+        android:id="@+id/tvSubmitted"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="21 Sep 2019"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelSubmitted"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelSubmitted" />
+
+    <TextView
+        android:id="@+id/tvLabelEmail"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="abc@gmail.com"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelEmail"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelEmail" />
+
+    <TextView
+        android:id="@+id/tvLabelContact"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Contact:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider3" />
+
+    <TextView
+        android:id="@+id/tvContact"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="9999999999"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelContact"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelContact" />
+
+    <TextView
+        android:id="@+id/tvLabelDob"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Date of birth:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider4" />
+
+    <TextView
+        android:id="@+id/tvDob"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="21 Jun 1998"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelDob"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelDob" />
+
+    <TextView
+        android:id="@+id/tvLabelQualification"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Qualification:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider5" />
+
+    <TextView
+        android:id="@+id/tvQualification"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="--"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelQualification"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelQualification" />
+
+    <TextView
+        android:id="@+id/tvLabelNoticePeriod"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Notice Period:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider6" />
+
+    <TextView
+        android:id="@+id/tvNoticePeriod"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="0 Days"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelNoticePeriod"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelNoticePeriod" />
+
+    <TextView
+        android:id="@+id/tvLabelExperience"
+        style="@style/TeamHeaders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Experience:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider7" />
+
+    <TextView
+        android:id="@+id/tvExperience"
+        style="@style/CardInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="2 Years"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelExperience"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.25"
+        android:background="@color/iconColor"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelExperience" />
+</androidx.constraintlayout.widget.ConstraintLayout>

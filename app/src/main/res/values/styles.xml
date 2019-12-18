@@ -35,5 +35,8 @@
     <style name="UsersHeader">
         <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
     </style>
+    <style name="HistoryHeader">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+    </style>
 
 </resources>
