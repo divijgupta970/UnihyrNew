@@ -14,43 +14,36 @@ import com.unihyr.Unihyr.drives_management.model.Drive;
 
 import java.util.List;
 
-public class DrivesAdapter extends RecyclerView.Adapter<DrivesAdapter.viewHolder> {
+public class DrivesAdapter extends RecyclerView.Adapter<DrivesAdapter.DrivesViewHolder> {
     private Context mCtx;
-    private List<Drive> driverList;
 
-    //private InfoClickHandler clickHandler;
-    public DrivesAdapter(Context mCtx, List<Drive> driverList) {
+
+    public DrivesAdapter(Context mCtx) {
         this.mCtx = mCtx;
-        this.driverList = driverList;
-        //this.clickHandler=clickHandler;
     }
 
     @NonNull
     @Override
-    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DrivesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mCtx).inflate(R.layout.item_drives, parent, false);
-        return new viewHolder(view);
+        return new DrivesViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        Drive currentdriver = driverList.get(position);
-        holder.drcontactperson.setText(currentdriver.getDrcontactperson());
-        holder.drPostion.setText(currentdriver.getDrpostion());
-        holder.drLocation.setText(currentdriver.getDrlocation());
-        holder.drdrive.setText(currentdriver.getDrdrive());
+    public void onBindViewHolder(@NonNull DrivesViewHolder holder, int position) {
+
     }
 
     @Override
     public int getItemCount() {
-        return driverList.size();
+        return 10;
     }
 
 
-    public class viewHolder extends RecyclerView.ViewHolder {
+    public class DrivesViewHolder extends RecyclerView.ViewHolder {
         TextView drdrive, drLocation, drPostion, drcontactperson;
 
-        public viewHolder(@NonNull View itemView) {
+        public DrivesViewHolder(@NonNull View itemView) {
             super(itemView);
             drdrive = itemView.findViewById(R.id.drDrive);
             drLocation = itemView.findViewById(R.id.drLocation);
