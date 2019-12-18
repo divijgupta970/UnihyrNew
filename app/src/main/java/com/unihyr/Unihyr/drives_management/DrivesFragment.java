@@ -12,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.unihyr.Unihyr.R;
-import com.unihyr.Unihyr.drives_management.drivesAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +25,7 @@ public class DrivesFragment  extends Fragment {
         // Required empty public constructor
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,4 +33,6 @@ public class DrivesFragment  extends Fragment {
         return inflater.inflate(R.layout.fragment_drives, container, false);
     }
 
-   }
+    }
+
+

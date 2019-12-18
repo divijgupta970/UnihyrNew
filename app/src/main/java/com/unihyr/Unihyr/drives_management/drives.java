@@ -3,6 +3,17 @@ package com.unihyr.Unihyr.drives_management;
 public class drives {
     private String drdrive,drlocation,drpostion,drcontactperson,date_time;
     private int Candiadate,shortlisted,rejected,no_show;
+    public drives(String drdrive, String drlocation, String drpostion, String drcontactperson, String date_time, int candiadate, int shortlisted, int rejected, int no_show) {
+        this.drdrive = drdrive;
+        this.drlocation = drlocation;
+        this.drpostion = drpostion;
+        this.drcontactperson = drcontactperson;
+        this.date_time = date_time;
+        Candiadate = candiadate;
+        this.shortlisted = shortlisted;
+        this.rejected = rejected;
+        this.no_show = no_show;
+    }
 
     public String getDrdrive() {
         return drdrive;
@@ -75,6 +86,4 @@ public class drives {
     public void setNo_show(int no_show) {
         this.no_show = no_show;
     }
-
-
 }
