@@ -33,7 +33,6 @@ public class OfferFragment extends Fragment {
     private RecyclerView recyclerView;
     private OfferAdapter adapter;
     private FloatingActionButton fab;
-    private BottomSheetBehavior behavior;
     public OfferFragment() {
         // Required empty public constructor
     }
@@ -52,24 +51,20 @@ public class OfferFragment extends Fragment {
         recyclerView=view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        View bottomSheet = view.findViewById(R.id.bottomSheet);
-        behavior = BottomSheetBehavior.from(bottomSheet);
-
         fab=view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                new BottomSheetDialog(new BottomSheetDialog.BottomSheetListener() {
+                    @Override
+                    public void onApply() {
+
+                    }
+                }).show(getFragmentManager(),"BottomSHeet");
             }
         });
 
-        MaterialButton btnApply=view.findViewById(R.id.btnApply);
-        btnApply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-            }
-        });
+
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -84,22 +79,6 @@ public class OfferFragment extends Fragment {
             }
         });
 
-        behavior.addBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-            @Override
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                if (newState==BottomSheetBehavior.STATE_EXPANDED){
-                    fab.hide();
-                }else if (newState==BottomSheetBehavior.STATE_COLLAPSED){
-                    fab.show();
-                }
-            }
-
-            @Override
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-
-            }
-        });
-
         setUpRecyclerView();
 
     }
@@ -108,6 +87,5 @@ public class OfferFragment extends Fragment {
     private void setUpRecyclerView() {
         adapter=new OfferAdapter(getActivity());
         recyclerView.setAdapter(adapter);
-
     }
 }
