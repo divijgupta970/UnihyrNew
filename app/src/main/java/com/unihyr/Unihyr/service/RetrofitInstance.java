@@ -5,7 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
     private static String BASE_URL="https://demorms.unihyr.com";
-    private static String BASE_URL_TEMP="https://testing.unihyr.com";
+    private static String BASE_URL_TEMP="https://demorms.unihyr.com";
+
+    //https://demorms.unihyr.com/demo/api/hrmanagepositionlistapi?postId=199&filterBy=all&selected_channel=0;
     private static Retrofit retrofit=null;
     private static Retrofit retrofitTemp=null;
     public static DataService getService(){

@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface DataServiceTemp {
-    @GET("/api/hrmanagepositionlistapi")
+    @GET("/demo/api/hrmanagepositionlistapi")
     Call<List<ViewPosition>> getTempPositions(@Query("postId")Long id,@Query("filterBy")String filter,@Query("selected_channel")int channel);
 }
