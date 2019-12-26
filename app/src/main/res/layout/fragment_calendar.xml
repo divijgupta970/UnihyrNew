@@ -7,5 +7,19 @@
     tools:context=".calendar.CalendarFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="#F8B910"
+        app:mcv_firstDayOfWeek="monday"
+        app:mcv_tileSize="match_parent"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintHeight_max="2in"
+        android:clipToPadding="true"
+        android:outlineProvider="bounds">
+
+    </com.prolificinteractive.materialcalendarview.MaterialCalendarView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

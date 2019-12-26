@@ -32,7 +32,7 @@ dependencies {
 
     implementation 'com.squareup.retrofit2:retrofit:2.6.2' //Retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
-
+    implementation 'com.shuhart.stepview:stepview:1.5.0'//setupView
     implementation "androidx.navigation:navigation-fragment:2.1.0" //Navigation Components
     implementation "androidx.navigation:navigation-ui:2.1.0"
 
@@ -46,4 +46,9 @@ dependencies {
     implementation 'com.github.ivbaranov:materiallettericon:0.2.3' //LetterIcons
 
     implementation 'com.shuhart.stepview:stepview:1.5.0' //StepView
+    implementation 'com.amazonaws:aws-android-sdk-core:2.2.13'//aws
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.2.13'//aws
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.2.13'//aws
+    implementation 'com.amazonaws:aws-android-sdk-ddb:2.2.13'//aws
+    implementation 'com.prolificinteractive:material-calendarview:1.4.2'//calender
 }
