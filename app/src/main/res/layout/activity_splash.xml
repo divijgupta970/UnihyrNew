@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/unihyrlogo" />
+        app:srcCompat="@drawable/unihyrlogo"
+        android:transitionName="@string/transition_image"/>
 
     <TextView
         android:id="@+id/tvLabel"
