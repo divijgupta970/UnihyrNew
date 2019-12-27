@@ -79,8 +79,8 @@ public class ProfileStatusActivity extends AppCompatActivity {
             case android.R.id.home:
                 finish();
                 break;
-            case R.id.action_edit:
-                //TODO: add edit code here
+            case R.id.action_schedule_interview:
+                interviewFunction();
                 break;
             case R.id.action_cv:
                 cvFunction();
@@ -136,5 +136,9 @@ public class ProfileStatusActivity extends AppCompatActivity {
 
     private void cvFunction() {
         //TODO: add CV code here
+    }
+
+    private void interviewFunction() {
+        startActivity(new Intent(this,ScheduleInterviewActivity.class));
     }
 }

@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".profile_status.ProfileStatusActivity">
     <item
-        android:id="@+id/action_edit"
+        android:id="@+id/action_schedule_interview"
         android:orderInCategory="300"
-        android:title="Edit"
-        android:icon="@drawable/ic_edit_toolbar"
+        android:title="Schedule Interview"
+        android:icon="@drawable/ic_briefcase"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_cv"
