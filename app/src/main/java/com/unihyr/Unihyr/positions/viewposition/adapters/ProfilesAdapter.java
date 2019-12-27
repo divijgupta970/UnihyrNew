@@ -6,6 +6,7 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.unihyr.Unihyr.R;
 import com.unihyr.Unihyr.positions.viewposition.model.ViewPosition;
 import com.unihyr.Unihyr.profile_status.ProfileStatusActivity;
+import com.unihyr.Unihyr.util.Utils;
 
 import java.util.List;
 
@@ -39,6 +41,12 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.Profil
         holder.tvName.setText(viewPosition.getName());
         holder.tvSubmit.setText(viewPosition.getSubmittedBy());
         holder.tvContact.setText(viewPosition.getContact());
+        holder.ivCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Utils.dialNumber(mCtx,viewPosition.getContact());
+            }
+        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,12 +63,14 @@ public class ProfilesAdapter extends RecyclerView.Adapter<ProfilesAdapter.Profil
 
     public class ProfilesViewholder extends RecyclerView.ViewHolder{
         private TextView tvName,tvSubmit,tvContact;
+        private ImageView ivCall;
 
         public ProfilesViewholder(@NonNull View itemView) {
             super(itemView);
             tvName=itemView.findViewById(R.id.tvName);
             tvSubmit=itemView.findViewById(R.id.tvSubmit);
             tvContact=itemView.findViewById(R.id.tvPhone);
+            ivCall=itemView.findViewById(R.id.ivCall);
 
         }
     }
