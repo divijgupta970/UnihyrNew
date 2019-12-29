@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="179dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+        <ImageView
+            android:id="@+id/sc_card_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:src="@drawable/ic_remove_red_eye_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/sc_card_selectround"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SelectRound"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sc_card_DateTime"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Date Time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sc_card_selectround" />
+
+        <TextView
+            android:id="@+id/sc_card_Duration"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Duration"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sc_card_DateTime" />
+
+        <TextView
+            android:id="@+id/sc_card_InterviewerEmail"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Interviewer Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sc_card_Duration" />
+
+        <TextView
+            android:id="@+id/sc_card_EvaluationMode"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Evaluation Mode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sc_card_InterviewerEmail" />
+
+        <TextView
+            android:id="@+id/sc_card_ModeDetail"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Mode Detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sc_card_EvaluationMode" />
+
+        <TextView
+            android:id="@+id/sc_card_selectroundE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Round 1" />
+
+        <TextView
+            android:id="@+id/sc_card_DateTimeE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toBottomOf="@+id/sc_card_selectroundE"
+            tools:text="25 Nov 2019 03:30PM" />
+
+        <TextView
+            android:id="@+id/sc_card_DurationE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toBottomOf="@+id/sc_card_DateTimeE"
+            tools:text="00:45" />
+
+        <TextView
+            android:id="@+id/sc_card_InterviewerEmailE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toBottomOf="@+id/sc_card_DurationE"
+            tools:text="hradmin@irms.com" />
+
+        <TextView
+            android:id="@+id/sc_card_EvaluationModeE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toBottomOf="@+id/sc_card_InterviewerEmailE"
+            tools:text="others" />
+
+        <TextView
+            android:id="@+id/sc_card_ModeDetailE"
+            style="@style/CardInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@id/sc_card_InterviewerEmail"
+            app:layout_constraintTop_toBottomOf="@+id/sc_card_EvaluationModeE"
+            tools:text="skypeid" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/iconColor"
+        android:alpha="0.25"/>
+</LinearLayout>
