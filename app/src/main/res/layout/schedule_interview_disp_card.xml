@@ -73,6 +73,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sc_card_InterviewerEmail" />
 
+
         <TextView
             android:id="@+id/sc_card_ModeDetail"
             style="@style/CardLabel"
