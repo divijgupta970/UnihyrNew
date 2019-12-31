@@ -39,23 +39,14 @@ public class Interview_Adapter extends RecyclerView.Adapter<Interview_Adapter.in
     }
 
     public class interviewPlaceHolder extends RecyclerView.ViewHolder {
-        TextView round,Date,Duration,Email,Mode,Evalution;
-        FloatingActionButton sc_fab;
+        TextView round,Date,Email,Mode,Evalution;
         public interviewPlaceHolder(@NonNull View itemView) {
             super(itemView);
             round =itemView.findViewById(R.id.sc_card_selectroundE);
             Date=itemView.findViewById(R.id.sc_DateTimeE);
-            Duration=itemView.findViewById(R.id.sc_DurationE);
             Email=itemView.findViewById(R.id.sc_InterviewerEmailE);
             Mode=itemView.findViewById(R.id.sc_Mode_DetailE);
             Evalution=itemView.findViewById(R.id.sc_EvaluationModeE);
-            sc_fab=itemView.findViewById(id.sc_fab);
-            sc_fab.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-              //code to go to activity_schedule_Interview
-                }
-            });
         }
     }
 }
