@@ -6,14 +6,24 @@
     tools:context=".profile_status.ProfileStatusActivity">
     <item
         android:id="@+id/action_schedule_interview"
-        android:orderInCategory="300"
+        android:orderInCategory="4"
         android:title="Schedule Interview"
-        android:icon="@drawable/ic_briefcase"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
     <item
         android:id="@+id/action_cv"
-        android:orderInCategory="200"
+        android:orderInCategory="3"
         android:title="View CV"
-        android:icon="@drawable/ic_cv"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_accept_offer"
+        android:title="Accept Offer"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_check_white"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_reject_offer"
+        android:title="Reject Offer"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_close"
+        app:showAsAction="always" />
 </menu>
