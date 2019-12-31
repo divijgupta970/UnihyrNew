@@ -12,10 +12,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="113dp"
+        android:layout_height="176dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:paddingBottom="8dp">
+
 
 
         <TextView
@@ -54,10 +55,20 @@
             style="@style/CardLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
             android:layout_marginTop="8dp"
+            android:text="Email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/drive_phone_no" />
+
+        <TextView
+            android:id="@+id/drive_action"
+            style="@style/CardLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drive_email" />
 
         <TextView
             android:id="@+id/drive_nameE"
@@ -91,6 +102,7 @@
             app:layout_constraintStart_toEndOf="@id/drive_phone_no"
             app:layout_constraintTop_toBottomOf="@+id/drive_statusE"
             tools:text="8958170034" />
+
         <TextView
             android:id="@+id/drive_emailE"
             style="@style/CardInfo"
@@ -100,8 +112,20 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@id/drive_phone_no"
             app:layout_constraintTop_toBottomOf="@+id/drive_phone_noE"
-            tools:text="8958170034" />
+            tools:text="asdfgh.gmail.com4" />
 
+        <com.github.ivbaranov.mli.MaterialLetterIcon
+            android:id="@+id/letterIcon"
+            android:layout_width="37dp"
+            android:layout_height="64dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@id/drive_phone_no"
+            app:layout_constraintTop_toBottomOf="@+id/drive_phone_noE"
+            app:mli_letter="A"
+            app:mli_letter_color="#ffffff"
+            app:mli_shape_color="@color/colorAccent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <View
         android:layout_width="match_parent"
